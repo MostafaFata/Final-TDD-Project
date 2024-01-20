@@ -10,10 +10,23 @@ public class HomeTest extends UIBase{
 
     @Test
     public void verifyHeading(){
-        navigateURL();
-        HomePage homePage = new HomePage();
-        String actualHeading = homePage.Heading.getText();
+        String actualHeading = getElementText(homePage.Heading);
         Assert.assertEquals(actualHeading, "TEK Insurance App", "verify heading is TEK Insurance App");
     }
+
+    @Test
+    public void verifyCreatePrimaryAccountButton(){
+        String actualButtonText = getElementText(homePage.CreateAccountButton);
+        Assert.assertEquals(actualButtonText, "Create Primary Account");
+    }
+
+    @Test
+    public void verifyCreatePrimaryAccountFormHeading(){
+        clickElement(homePage.CreateAccountButton);
+        String actualFormHeading = getElementText(homePage.CreateAccountFormHeading);
+        Assert.assertEquals(actualFormHeading, "Create Primary Account Holder");
+    }
+
+
 
 }
