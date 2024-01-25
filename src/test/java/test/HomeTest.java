@@ -23,7 +23,7 @@ public class HomeTest extends UIBase{
     @Test
     public void verifyCreatePrimaryAccountFormHeading(){
         clickElement(homePage.CreateAccountButton);
-        String actualFormHeading = getElementText(homePage.CreateAccountFormHeading);
+        String actualFormHeading = getElementTextWait(homePage.CreateAccountFormHeading);
         Assert.assertEquals(actualFormHeading, "Create Primary Account Holder");
     }
 

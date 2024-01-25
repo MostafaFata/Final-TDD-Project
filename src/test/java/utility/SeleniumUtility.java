@@ -18,7 +18,14 @@ public class SeleniumUtility extends Setup {
     public void clickElement(WebElement element){
         element.click();
     }
+    public String getElementTextWait(WebElement element){
+        WebDriverWait driverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
+        return driverWait.until(ExpectedConditions.visibilityOf(element)).getText();
+    }
 
+    public void setElementData(WebElement element, String data){
+        element.sendKeys(data);
+    }
     
 
 }
